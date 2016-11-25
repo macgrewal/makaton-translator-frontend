@@ -9,7 +9,7 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
   var articles = [new Article(), new Article()];
     res.render('home/index', {
-      title: 'Generator-Express MVC',
+      title: 'Makaton Translator',
       articles: articles
     });
 });
