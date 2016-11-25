@@ -15,6 +15,7 @@
 
 ```
 git clone git@github.com:macgrewal/makaton-translator-frontend.git
+cd makaton-translator-frontend
 npm install -g gulp bower
 npm install
 gulp      # starts in development mode
