@@ -1,4 +1,5 @@
-var express = require('express'),
+var service = require('../services/translation'),
+  express = require('express'),
   router = express.Router();
 
 module.exports = function (app) {
@@ -6,15 +7,19 @@ module.exports = function (app) {
 };
 
 router.get('/words', function (req, res, next) {
-  res.send({
-    cards: req.query.cards,
-    words: "hello, I am the makaton translator!"
+  service.getWords(req.query.cards, function (data) {
+    res.send({
+      words: data,
+      cards: req.query.cards
+    });
   });
 });
 
 router.get('/cards', function (req, res, next) {
-  res.send({
-    words: req.query.words,
-    cards: [1, 2, 3, 5, 6, 7, 8, 9, 10]
+  service.getCards(req.query.words, function (data) {
+    res.send({
+      words: req.query.words,
+      cards: data
+    });
   });
 });

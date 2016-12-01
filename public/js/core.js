@@ -5,7 +5,7 @@ $(document).ready(function () {
     toEnglishButton = $('button', makatonForm),
     toMakatonButton = $('button', englishForm),
     words = $('[name="words"]', englishForm),
-    cards = $('[name="cards"]', makatonForm),
+    cards = '',
     makaton = $('#makaton'),
     currentCard = $('select'),
     add = $('#add-card');
@@ -19,7 +19,7 @@ $(document).ready(function () {
     $.ajax({
       url: '/api/words',
       data: {
-        cards: cards.val().split(' ')
+        cards: cards.trim()
       },
       dataType: 'json',
       success: function (data) {
@@ -43,17 +43,20 @@ $(document).ready(function () {
     var image = $('<img></img>'); // TODO: 
     image.attr('src', "/img/core/" + currentCard.val());
     makaton.append(image);
+    var symbol = currentCard.val().substring(0, currentCard.val().indexOf('.png')).trim()
+    cards += ' ' + symbol
   });
 
   function setCards(data) {
     console.log(data.cards);
+    var images = data.cards.split(' ');
     makaton.empty();
-    for (var i = 0; i < data.cards.length; i++) {
+    for (var i = 0; i < images.length; i++) {
       var image = $('<span class="card"></span>'); // TODO: 
-      image.text(data.cards[i]);
+      image.text(images[i]);
       makaton.append(image);
     }
-    cards.text(data.cards);
+    cards = data.cards;
   }
 
 });
