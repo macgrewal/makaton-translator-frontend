@@ -17,7 +17,8 @@ module.exports = (function () {
       //   console.log('HEADERS: ' + JSON.stringify(res.headers));
       res.on('data', function (chunk) {
         result += chunk;
-        callback(JSON.parse(result));
+        var data = JSON.parse(result);
+        callback(data);
       });
     });
 
@@ -50,7 +51,6 @@ module.exports = (function () {
     callService(data, options, getData);
   }
 
-
   function cardsToWords(cards, success) {
     var data = JSON.stringify({
         imagesentence: cards
@@ -67,7 +67,6 @@ module.exports = (function () {
     var getData = function (data) {
       success(data.englishsentence);
     }
-
 
     callService(data, options, getData);
   }
