@@ -4,11 +4,16 @@ $(document).ready(function () {
     makatonForm = $('form[data-language="makaton"]'),
     toEnglishButton = $('button', makatonForm),
     toMakatonButton = $('button', englishForm),
+    englishUsername = englishForm.data('username'),
+    makatonUsername = makatonForm.data('username'),
+    toMakatonButton = $('button', englishForm),
     words = $('[name="words"]', englishForm),
-    cards = '',
+    cards = [],
     makaton = $('#makaton'),
-    currentCard = $('select'),
-    add = $('#add-card');
+    currentCard = $('#coreWords'),
+    add = $('#add-card'),
+    remove = $('#remove-card'),
+    coreVocab = [];
 
   // stop the buttons from posting back to the server
   $('form[data-language] > button').click(function (e) {
@@ -19,11 +24,15 @@ $(document).ready(function () {
     $.ajax({
       url: '/api/words',
       data: {
-        cards: cards.trim()
+        username: englishUsername,
+        cards: cards
       },
       dataType: 'json',
       success: function (data) {
         words.val(data.words);
+        var utterance = new SpeechSynthesisUtterance(data.words);
+        utterance.lang = 'en-GB';
+        window.speechSynthesis.speak(utterance);
       }
     });
   });
@@ -32,6 +41,7 @@ $(document).ready(function () {
     $.ajax({
       url: '/api/cards',
       data: {
+        username: englishUsername,
         words: words.val()
       },
       dataType: 'json',
@@ -39,24 +49,46 @@ $(document).ready(function () {
     });
   });
 
-  add.click(function() {
-    var image = $('<img></img>'); // TODO: 
-    image.attr('src', "/img/core/" + currentCard.val());
-    makaton.append(image);
-    var symbol = currentCard.val().substring(0, currentCard.val().indexOf('.png')).trim()
-    cards += ' ' + symbol
+  add.click(function () {
+    addCard(currentCard.val());
   });
 
-  function setCards(data) {
-    console.log(data.cards);
-    var images = data.cards.split(' ');
-    makaton.empty();
-    for (var i = 0; i < images.length; i++) {
-      var image = $('<span class="card"></span>'); // TODO: 
-      image.text(images[i]);
-      makaton.append(image);
-    }
-    cards = data.cards;
+  remove.click(function () {
+    cards.pop();
+    $('img:last', makaton).remove();
+  });
+
+  function addCard(cardId) {
+    var image = '<img src="/img/core/' + cardId + '.png" />';
+    makaton.append(image);
+    cards.push({
+      id: cardId
+    });
   }
 
+  function clearCards() {
+    cards = [];
+    makaton.empty();
+  }
+
+  function setCards(data) {
+    clearCards();
+    var cards = data.cards;
+    for (i = 0; i < cards.length; i++) {
+      addCard(cards[i].id);
+    }
+  }
+
+  function loadCoreVocabulary() {
+    $.getJSON('/js/core-vocab.json', function (words) {
+      for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        var option = '<option value="' + word.id + '">' + word.word + '</option>';
+        currentCard.append(option);
+      }
+      coreVocab = words;
+    });
+  }
+
+  loadCoreVocabulary();
 });
