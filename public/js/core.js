@@ -12,6 +12,7 @@ $(document).ready(function () {
     makaton = $('#makaton'),
     currentCard = $('#coreWords'),
     add = $('#add-card'),
+    remove = $('#remove-card'),
     coreVocab = [];
 
   // stop the buttons from posting back to the server
@@ -29,6 +30,9 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (data) {
         words.val(data.words);
+        var utterance = new SpeechSynthesisUtterance(data.words);
+        utterance.lang = 'en-GB';
+        window.speechSynthesis.speak(utterance);
       }
     });
   });
@@ -49,10 +53,17 @@ $(document).ready(function () {
     addCard(currentCard.val());
   });
 
+  remove.click(function () {
+    cards.pop();
+    $('img:last', makaton).remove();
+  });
+
   function addCard(cardId) {
     var image = '<img src="/img/core/' + cardId + '.png" />';
     makaton.append(image);
-    cards.push({ id: cardId});
+    cards.push({
+      id: cardId
+    });
   }
 
   function clearCards() {

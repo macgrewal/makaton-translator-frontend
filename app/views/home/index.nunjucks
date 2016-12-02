@@ -19,6 +19,7 @@
         <select id="coreWords"></select>
       </label>
       <a id="add-card" href="#" class="button">Add Card</a>
+      <a id="remove-card" href="#" class="button">Remove Card</a>
       <button>Tell {{ englishSpeaker.displayName }}</button>
     </form>
   </main>
