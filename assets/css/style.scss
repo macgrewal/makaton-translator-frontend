@@ -15,13 +15,66 @@ a {
   text-align: right;
 }
 
+sidebar {
+  padding-top: 10px;
+  display: block;
+  border-right: solid;
+  textarea,
+  button {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+sidebar, pictures {
+  margin-left: 0px;
+  border-top: solid;
+  img {
+    width: 75%;
+    border: solid;
+    padding: 10px;
+  }
+}
+
+.columns {
+  margin-left: 0px;
+  border-color: #41D29E;
+}
+
+.submit-delete-section {
+  border-left: solid;
+  border-color: #41D29E;
+  padding-left: 5%;
+}
+
+pictures {
+  display: block;
+  img {
+    width: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.delete-button {
+  background: url("/img/page-assets/deleteButton.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40%;
+  height: 50px;
+}
+
+.translate-button {
+  width: 50%;
+  height: 50%;
+}
+
 form {
-  &[data-language="english"] button::after {
-    content: " >>"
-  }
-  &[data-direction="makaton"] button::before {
-    content: "<< "
-  }
   label>span {
     display: block;
     margin-bottom: 1em;
@@ -40,7 +93,7 @@ form {
     min-height: 10em;
     border: 1px solid #bbb;
     border-radius: 4px;
-    
+
     &:hover,
     &:active {
       border-color: #000;
