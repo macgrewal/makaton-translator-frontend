@@ -4,7 +4,10 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   sass = require('gulp-sass');
 
-gulp.task('sass', function () {
+gulp.task('assets', function () {
+  gulp.src('./assets/js/*')
+    .pipe(gulp.dest('./public/js/'));
+
   gulp.src('./assets/css/style.scss')
     .pipe(plumber())
     .pipe(sass({ outputStyle: 'compressed' }))
@@ -13,7 +16,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./assets/css/*.scss', ['sass']);
+  gulp.watch(['./assets/css/*.scss', './assets/js/*.js'], ['assets']);
 });
 
 gulp.task('develop', function () {
@@ -34,7 +37,7 @@ gulp.task('develop', function () {
 });
 
 gulp.task('default', [
-  'sass',
+  'assets',
   'develop',
   'watch'
 ]);
