@@ -24,3 +24,7 @@
     </form>
   </main>
 {% endblock %}
+
+{% block scripts %}
+  <script src="/js/translate.js"></script>
+{% endblock %}
