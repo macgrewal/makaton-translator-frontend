@@ -15,7 +15,7 @@ module.exports = function(app, config) {
   app.locals.ENV_DEVELOPMENT = env == 'development';
   
   app.set('views', config.root + '/app/views');
-  app.set('view engine', 'nunjucks');
+  app.set('view engine', 'njk');
   nunjucks.configure(config.root + '/app/views', {
       autoescape: true,
       express: app

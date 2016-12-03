@@ -1,18 +1,23 @@
 [{
     "word": "UNKNOWN",
-    "id": 0
+    "id": 0,
+    "categories": ["NA"]
 }, {
     "word": "a",
-    "id": 1
+    "id": 1,
+    "categories": ["Common"]
 }, {
     "word": "aeroplane",
-    "id": 2
+    "id": 2,
+    "categories": ["Activities"]
 }, {
     "word": "after",
-    "id": 3
+    "id": 3,
+    "categories": ["Common"]
 }, {
     "word": "again",
-    "id": 4
+    "id": 4,
+    "categories": ["Common"]
 }, {
     "word": "airman",
     "id": 5
@@ -24,10 +29,12 @@
     "id": 7
 }, {
     "word": "always",
-    "id": 8
+    "id": 8,
+    "categories": ["Common"]
 }, {
     "word": "am",
-    "id": 9
+    "id": 9,
+    "categories": ["Common"]
 }, {
     "word": "ambulance man",
     "id": 10
@@ -36,22 +43,27 @@
     "id": 11
 }, {
     "word": "and",
-    "id": 12
+    "id": 12,
+    "categories": ["Common"]
 }, {
     "word": "angry",
-    "id": 13
+    "id": 13,
+    "categories": ["Feelings"]
 }, {
     "word": "another",
     "id": 14
 }, {
     "word": "apple",
-    "id": 15
+    "id": 15,
+    "categories": ["Food"]
 }, {
     "word": "are",
-    "id": 16
+    "id": 16,
+    "categories": ["Common"]
 }, {
     "word": "ask",
-    "id": 17
+    "id": 17,
+    "categories": ["Common"]
 }, {
     "word": "audio cassette",
     "id": 18
@@ -69,10 +81,12 @@
     "id": 22
 }, {
     "word": "bacon",
-    "id": 23
+    "id": 23,
+    "categories": ["Food"]
 }, {
     "word": "bad",
-    "id": 24
+    "id": 24,
+    "categories": ["Feelings"]
 }, {
     "word": "naughty",
     "id": 25
@@ -81,67 +95,84 @@
     "id": 26
 }, {
     "word": "bagel",
-    "id": 27
+    "id": 27,
+    "categories": ["Food"]
 }, {
     "word": "ball",
-    "id": 28
+    "id": 28,
+    "categories": ["Activities"]
 }, {
     "word": "balloon",
     "id": 29
 }, {
     "word": "banana",
-    "id": 30
+    "id": 30,
+    "categories": ["Food"]
 }, {
     "word": "bath",
-    "id": 31
+    "id": 31,
+    "categories": ["Routine"]
 }, {
     "word": "bathroom",
     "id": 32
 }, {
     "word": "be able",
-    "id": 33
+    "id": 33,
+    "categories": ["Common"]
 }, {
     "word": "be",
-    "id": 34
+    "id": 34,
+    "categories": ["Common"]
 }, {
     "word": "beautiful",
     "id": 35
 }, {
     "word": "because",
-    "id": 36
+    "id": 36,
+    "categories": ["Common"]
 }, {
     "word": "bed",
-    "id": 37
+    "id": 37,
+    "categories": ["Activities", "Routine"]
 }, {
     "word": "bedroom",
     "id": 38
 }, {
     "word": "been",
-    "id": 39
+    "id": 39,
+    "categories": ["Common"]
 }, {
     "word": "beer",
-    "id": 40
+    "id": 40,
+    "categories": ["Food"]
 }, {
     "word": "before",
-    "id": 41
+    "id": 41,
+    "categories": ["Common"]
 }, {
     "word": "begin",
-    "id": 42
+    "id": 42,
+    "categories": ["Common"]
 }, {
     "word": "start",
-    "id": 43
+    "id": 43,
+    "categories": ["Common"]
 }, {
     "word": "being",
-    "id": 44
+    "id": 44,
+    "categories": ["Common"]
 }, {
     "word": "between",
-    "id": 45
+    "id": 45,
+    "categories": ["Common"]
 }, {
     "word": "bicycle",
-    "id": 46
+    "id": 46,
+    "categories": ["Activities"]
 }, {
     "word": "big",
-    "id": 47
+    "id": 47,
+    "categories": ["Common"]
 }, {
     "word": "bird",
     "id": 48
@@ -150,7 +181,8 @@
     "id": 49
 }, {
     "word": "biscuit",
-    "id": 50
+    "id": 50,
+    "categories": ["Food"]
 }, {
     "word": "black",
     "id": 51
@@ -165,7 +197,8 @@
     "id": 54
 }, {
     "word": "boat",
-    "id": 55
+    "id": 55,
+    "categories": ["Activities"]
 }, {
     "word": "book",
     "id": 56
@@ -186,10 +219,12 @@
     "id": 61
 }, {
     "word": "bricks",
-    "id": 62
+    "id": 62,
+    "categories": ["Activities"]
 }, {
     "word": "bring",
-    "id": 63
+    "id": 63,
+    "categories": ["Common"]
 }, {
     "word": "brother",
     "id": 64
@@ -198,10 +233,12 @@
     "id": 65
 }, {
     "word": "brush hair",
-    "id": 66
+    "id": 66,
+    "categories": ["Activities", "Routine"]
 }, {
     "word": "brush teeth",
-    "id": 67
+    "id": 67,
+    "categories": ["Activities", "Routine"]
 }, {
     "word": "build",
     "id": 68
@@ -210,7 +247,8 @@
     "id": 69
 }, {
     "word": "burger",
-    "id": 70
+    "id": 70,
+    "categories": ["Food"]
 }, {
     "word": "bus",
     "id": 71
@@ -219,7 +257,8 @@
     "id": 72
 }, {
     "word": "butter",
-    "id": 73
+    "id": 73,
+    "categories": ["Food"]
 }, {
     "word": "butterfly",
     "id": 74
@@ -228,19 +267,23 @@
     "id": 75
 }, {
     "word": "cake",
-    "id": 76
+    "id": 76,
+    "categories": ["Food"]
 }, {
     "word": "calm",
     "id": 77
 }, {
     "word": "camera",
-    "id": 78
+    "id": 78,
+    "categories": ["Activities"]
 }, {
     "word": "can",
-    "id": 79
+    "id": 79,
+    "categories": ["Common"]
 }, {
     "word": "canned drink",
-    "id": 80
+    "id": 80,
+    "categories": ["Food"]
 }, {
     "word": "car",
     "id": 81
@@ -249,49 +292,59 @@
     "id": 82
 }, {
     "word": "carry",
-    "id": 83
+    "id": 83,
+    "categories": ["Activities"]
 }, {
     "word": "cat",
     "id": 84
 }, {
     "word": "catch",
-    "id": 85
+    "id": 85,
+    "categories": ["Activities"]
 }, {
     "word": "cd",
     "id": 86
 }, {
     "word": "cereal",
-    "id": 87
+    "id": 87,
+    "categories": ["Food"]
 }, {
     "word": "chair",
     "id": 88
 }, {
     "word": "chapatti",
-    "id": 89
+    "id": 89,
+    "categories": ["Food"]
 }, {
     "word": "cheese",
-    "id": 90
+    "id": 90,
+    "categories": ["Food"]
 }, {
     "word": "chicken",
-    "id": 91
+    "id": 91,
+    "categories": ["Food"]
 }, {
     "word": "children",
     "id": 92
 }, {
     "word": "chips",
-    "id": 93
+    "id": 93,
+    "categories": ["Food"]
 }, {
     "word": "chocolate",
-    "id": 94
+    "id": 94,
+    "categories": ["Food"]
 }, {
     "word": "choose",
     "id": 95
 }, {
     "word": "cigarette",
-    "id": 96
+    "id": 96,
+    "categories": ["Activities"]
 }, {
     "word": "cinema",
-    "id": 97
+    "id": 97,
+    "categories": ["Activities"]
 }, {
     "word": "clean",
     "id": 98
@@ -300,7 +353,8 @@
     "id": 99
 }, {
     "word": "climb",
-    "id": 100
+    "id": 100,
+    "categories": ["Activities"]
 }, {
     "word": "close",
     "id": 101
@@ -309,13 +363,16 @@
     "id": 102
 }, {
     "word": "coffee",
-    "id": 103
+    "id": 103,
+    "categories": ["Food"]
 }, {
     "word": "cola",
-    "id": 104
+    "id": 104,
+    "categories": ["Food"]
 }, {
     "word": "cold",
-    "id": 105
+    "id": 105,
+    "categories": ["Feelings"]
 }, {
     "word": "colour",
     "id": 106
@@ -327,19 +384,24 @@
     "id": 108
 }, {
     "word": "comb hair",
-    "id": 109
+    "id": 109,
+    "categories": ["Activities"]
 }, {
     "word": "come",
-    "id": 110
+    "id": 110,
+    "categories": ["Common"]
 }, {
     "word": "computer",
-    "id": 111
+    "id": 111,
+    "categories": ["Activities"]
 }, {
     "word": "construct",
-    "id": 112
+    "id": 112,
+    "categories": ["Activities"]
 }, {
     "word": "cook",
-    "id": 113
+    "id": 113,
+    "categories": ["Activities", "Food"]
 }, {
     "word": "country",
     "id": 114
@@ -351,19 +413,23 @@
     "id": 116
 }, {
     "word": "create",
-    "id": 117
+    "id": 117,
+    "categories": ["Activities"]
 }, {
     "word": "crisps",
-    "id": 118
+    "id": 118,
+    "categories": ["Food"]
 }, {
     "word": "cup",
-    "id": 119
+    "id": 119,
+    "categories": ["Food"]
 }, {
     "word": "cupboard",
     "id": 120
 }, {
     "word": "curry",
-    "id": 121
+    "id": 121,
+    "categories": ["Food"]
 }, {
     "word": "cut",
     "id": 122
@@ -378,10 +444,12 @@
     "id": 125
 }, {
     "word": "dal",
-    "id": 126
+    "id": 126,
+    "categories": ["Food"]
 }, {
     "word": "dance",
-    "id": 127
+    "id": 127,
+    "categories": ["Activities"]
 }, {
     "word": "day",
     "id": 128
@@ -393,16 +461,20 @@
     "id": 130
 }, {
     "word": "dhal",
-    "id": 131
+    "id": 131,
+    "categories": ["Food"]
 }, {
     "word": "did",
-    "id": 132
+    "id": 132,
+    "categories": ["Common"]
 }, {
     "word": "different",
-    "id": 133
+    "id": 133,
+    "categories": ["Common"]
 }, {
     "word": "difficult",
-    "id": 134
+    "id": 134,
+    "categories": ["Common"]
 }, {
     "word": "dig",
     "id": 135
@@ -420,13 +492,15 @@
     "id": 139
 }, {
     "word": "do",
-    "id": 140
+    "id": 140,
+    "categories": ["Common"]
 }, {
     "word": "doctor",
     "id": 141
 }, {
     "word": "does",
-    "id": 142
+    "id": 142,
+    "categories": ["Common"]
 }, {
     "word": "dog",
     "id": 143
@@ -435,16 +509,19 @@
     "id": 144
 }, {
     "word": "doll",
-    "id": 145
+    "id": 145,
+    "categories": ["Activities"]
 }, {
     "word": "done",
-    "id": 146
+    "id": 146,
+    "categories": ["Common"]
 }, {
     "word": "door",
     "id": 147
 }, {
     "word": "down",
-    "id": 148
+    "id": 148,
+    "categories": ["Common"]
 }, {
     "word": "draw",
     "id": 149
@@ -453,22 +530,27 @@
     "id": 150
 }, {
     "word": "drink",
-    "id": 151
+    "id": 151,
+    "categories": ["Activities", "Food", "Routine"]
 }, {
     "word": "early",
     "id": 152
 }, {
     "word": "easy",
-    "id": 153
+    "id": 153,
+    "categories": ["Common"]
 }, {
     "word": "eat",
-    "id": 154
+    "id": 154,
+    "categories": ["Food", "Routine"]
 }, {
     "word": "egg",
-    "id": 155
+    "id": 155,
+    "categories": ["Food"]
 }, {
     "word": "end",
-    "id": 156
+    "id": 156,
+    "categories": ["Common"]
 }, {
     "word": "expensive",
     "id": 157
@@ -483,13 +565,15 @@
     "id": 160
 }, {
     "word": "fast",
-    "id": 161
+    "id": 161,
+    "categories": ["Common"]
 }, {
     "word": "father",
     "id": 162
 }, {
     "word": "few",
-    "id": 163
+    "id": 163,
+    "categories": ["Common"]
 }, {
     "word": "find",
     "id": 164
@@ -507,34 +591,41 @@
     "id": 168
 }, {
     "word": "fish",
-    "id": 169
+    "id": 169,
+    "categories": ["Food"]
 }, {
     "word": "flower",
     "id": 170
 }, {
     "word": "food",
-    "id": 171
+    "id": 171,
+    "categories": ["Food"]
 }, {
     "word": "for",
-    "id": 172
+    "id": 172,
+    "categories": ["Common"]
 }, {
     "word": "forget",
     "id": 173
 }, {
     "word": "fork",
-    "id": 174
+    "id": 174,
+    "categories": ["Food"]
 }, {
     "word": "friend",
     "id": 175
 }, {
     "word": "frightened",
-    "id": 176
+    "id": 176,
+    "categories": ["Feelings"]
 }, {
     "word": "fruit",
-    "id": 177
+    "id": 177,
+    "categories": ["Food"]
 }, {
     "word": "garden",
-    "id": 178
+    "id": 178,
+    "categories": ["Routine"]
 }, {
     "word": "get up",
     "id": 179
@@ -543,16 +634,19 @@
     "id": 180
 }, {
     "word": "give",
-    "id": 181
+    "id": 181,
+    "categories": ["Common"]
 }, {
     "word": "glasses",
     "id": 182
 }, {
     "word": "go",
-    "id": 183
+    "id": 183,
+    "categories": ["Common"]
 }, {
     "word": "good",
-    "id": 184
+    "id": 184,
+    "categories": ["Feelings"]
 }, {
     "word": "good morning",
     "id": 185
@@ -567,31 +661,39 @@
     "id": 188
 }, {
     "word": "had",
-    "id": 189
+    "id": 189,
+    "categories": ["Common"]
 }, {
     "word": "had",
-    "id": 190
+    "id": 190,
+    "categories": ["Common"]
 }, {
     "word": "hairbrush",
     "id": 191
 }, {
     "word": "happy",
-    "id": 192
+    "id": 192,
+    "categories": ["Feelings"]
 }, {
     "word": "hard",
-    "id": 193
+    "id": 193,
+    "categories": ["Common"]
 }, {
     "word": "has",
-    "id": 194
+    "id": 194,
+    "categories": ["Common"]
 }, {
     "word": "have",
-    "id": 195
+    "id": 195,
+    "categories": ["Common"]
 }, {
     "word": "having",
-    "id": 196
+    "id": 196,
+    "categories": ["Common"]
 }, {
     "word": "he",
-    "id": 197
+    "id": 197,
+    "categories": ["Common"]
 }, {
     "word": "hear",
     "id": 198
@@ -642,10 +744,12 @@
     "id": 213
 }, {
     "word": "hot",
-    "id": 214
+    "id": 214,
+    "categories": ["Feelings"]
 }, {
     "word": "hot food",
-    "id": 215
+    "id": 215,
+    "categories": ["Food"]
 }, {
     "word": "hour",
     "id": 216
@@ -669,49 +773,63 @@
     "id": 222
 }, {
     "word": "hungry",
-    "id": 223
+    "id": 223,
+    "categories": ["Feelings"]
 }, {
     "word": "i",
-    "id": 224
+    "id": 224,
+    "categories": ["Common"]
 }, {
     "word": "ice cream",
-    "id": 225
+    "id": 225,
+    "categories": ["Food"]
 }, {
     "word": "ill",
-    "id": 226
+    "id": 226,
+    "categories": ["Feelings"]
 }, {
     "word": "in",
-    "id": 227
+    "id": 227,
+    "categories": ["Common"]
 }, {
     "word": "injection",
     "id": 228
 }, {
     "word": "is",
-    "id": 229
+    "id": 229,
+    "categories": ["Common"]
 }, {
     "word": "it",
-    "id": 230
+    "id": 230,
+    "categories": ["Common"]
 }, {
     "word": "its",
-    "id": 231
+    "id": 231,
+    "categories": ["Common"]
 }, {
     "word": "jam",
-    "id": 232
+    "id": 232,
+    "categories": ["Food"]
 }, {
     "word": "juice",
-    "id": 233
+    "id": 233,
+    "categories": ["Food"]
 }, {
     "word": "jump",
-    "id": 234
+    "id": 234,
+    "categories": ["Activities"]
 }, {
     "word": "jump off",
-    "id": 235
+    "id": 235,
+    "categories": ["Activities"]
 }, {
     "word": "jump on",
-    "id": 236
+    "id": 236,
+    "categories": ["Activities"]
 }, {
     "word": "jump over",
-    "id": 237
+    "id": 237,
+    "categories": ["Activities"]
 }, {
     "word": "key",
     "id": 238
@@ -720,19 +838,22 @@
     "id": 239
 }, {
     "word": "kind",
-    "id": 240
+    "id": 240,
+    "categories": ["Feelings"]
 }, {
     "word": "king",
     "id": 241
 }, {
     "word": "kitchen",
-    "id": 242
+    "id": 242,
+    "categories": ["Food"]
 }, {
     "word": "knife",
     "id": 243
 }, {
     "word": "know",
-    "id": 244
+    "id": 244,
+    "categories": ["Common"]
 }, {
     "word": "lady",
     "id": 245
@@ -741,7 +862,8 @@
     "id": 246
 }, {
     "word": "last",
-    "id": 247
+    "id": 247,
+    "categories": ["Common"]
 }, {
     "word": "last week",
     "id": 248
@@ -759,58 +881,71 @@
     "id": 252
 }, {
     "word": "like",
-    "id": 253
+    "id": 253,
+    "categories": ["Feelings", "Common"]
 }, {
     "word": "listen",
     "id": 254
 }, {
     "word": "little",
-    "id": 255
+    "id": 255,
+    "categories": ["Common"]
 }, {
     "word": "long time ago",
     "id": 256
 }, {
     "word": "look",
-    "id": 257
+    "id": 257,
+    "categories": ["Common"]
 }, {
     "word": "lot",
-    "id": 258
+    "id": 258,
+    "categories": ["Common"]
 }, {
     "word": "lounge",
     "id": 259
 }, {
     "word": "love",
-    "id": 260
+    "id": 260,
+    "categories": ["Feelings"]
 }, {
     "word": "lucky",
     "id": 261
 }, {
     "word": "make",
-    "id": 262
+    "id": 262,
+    "categories": ["Common"]
 }, {
     "word": "man",
-    "id": 263
+    "id": 263,
+    "categories": ["Common"]
 }, {
     "word": "many",
-    "id": 264
+    "id": 264,
+    "categories": ["Common"]
 }, {
     "word": "matter",
-    "id": 265
+    "id": 265,
+    "categories": ["Common"]
 }, {
     "word": "may",
-    "id": 266
+    "id": 266,
+    "categories": ["Common"]
 }, {
     "word": "me",
-    "id": 267
+    "id": 267,
+    "categories": ["Common"]
 }, {
     "word": "meat",
-    "id": 268
+    "id": 268,
+    "categories": ["Food"]
 }, {
     "word": "medicine",
     "id": 269
 }, {
     "word": "milk",
-    "id": 270
+    "id": 270,
+    "categories": ["Food"]
 }, {
     "word": "milkman",
     "id": 271
@@ -825,7 +960,8 @@
     "id": 274
 }, {
     "word": "miserable",
-    "id": 275
+    "id": 275,
+    "categories": ["Feelings"]
 }, {
     "word": "mistake",
     "id": 276
@@ -840,7 +976,8 @@
     "id": 279
 }, {
     "word": "more",
-    "id": 280
+    "id": 280,
+    "categories": ["Common"]
 }, {
     "word": "mother",
     "id": 281
@@ -852,16 +989,19 @@
     "id": 283
 }, {
     "word": "music",
-    "id": 284
+    "id": 284,
+    "categories": ["Routine"]
 }, {
     "word": "must",
     "id": 285
 }, {
     "word": "my",
-    "id": 286
+    "id": 286,
+    "categories": ["Common"]
 }, {
     "word": "naan",
-    "id": 287
+    "id": 287,
+    "categories": ["Food"]
 }, {
     "word": "namaste",
     "id": 288
@@ -873,13 +1013,15 @@
     "id": 290
 }, {
     "word": "new",
-    "id": 291
+    "id": 291,
+    "categories": ["Common"]
 }, {
     "word": "newspaper",
     "id": 292
 }, {
     "word": "next",
-    "id": 293
+    "id": 293,
+    "categories": ["Common"]
 }, {
     "word": "next week",
     "id": 294
@@ -888,7 +1030,8 @@
     "id": 295
 }, {
     "word": "nice",
-    "id": 296
+    "id": 296,
+    "categories": ["Common"]
 }, {
     "word": "night",
     "id": 297
@@ -897,16 +1040,19 @@
     "id": 298
 }, {
     "word": "no",
-    "id": 299
+    "id": 299,
+    "categories": ["Common"]
 }, {
     "word": "noodles",
     "id": 300
 }, {
     "word": "not",
-    "id": 301
+    "id": 301,
+    "categories": ["Common"]
 }, {
     "word": "now",
-    "id": 302
+    "id": 302,
+    "categories": ["Common"]
 }, {
     "word": "nurse",
     "id": 303
@@ -915,13 +1061,16 @@
     "id": 304
 }, {
     "word": "ok",
-    "id": 305
+    "id": 305,
+    "categories": ["Feelings", "Common"]
 }, {
     "word": "old",
-    "id": 306
+    "id": 306,
+    "categories": ["Common"]
 }, {
     "word": "on",
-    "id": 307
+    "id": 307,
+    "categories": ["Common"]
 }, {
     "word": "operation",
     "id": 308
@@ -933,22 +1082,27 @@
     "id": 310
 }, {
     "word": "our",
-    "id": 311
+    "id": 311,
+    "categories": ["Common"]
 }, {
     "word": "ours",
-    "id": 312
+    "id": 312,
+    "categories": ["Common"]
 }, {
     "word": "outside",
-    "id": 313
+    "id": 313,
+    "categories": ["Routine"]
 }, {
     "word": "over",
     "id": 314
 }, {
     "word": "pain",
-    "id": 315
+    "id": 315,
+    "categories": ["Feelings"]
 }, {
     "word": "paint",
-    "id": 316
+    "id": 316,
+    "categories": ["Activities"]
 }, {
     "word": "paper",
     "id": 317
@@ -957,10 +1111,12 @@
     "id": 318
 }, {
     "word": "party",
-    "id": 319
+    "id": 319,
+    "categories": ["Activities"]
 }, {
     "word": "pasta",
-    "id": 320
+    "id": 320,
+    "categories": ["Food"]
 }, {
     "word": "patient",
     "id": 321
@@ -984,7 +1140,8 @@
     "id": 327
 }, {
     "word": "pie",
-    "id": 328
+    "id": 328,
+    "categories": ["Food"]
 }, {
     "word": "pig",
     "id": 329
@@ -993,7 +1150,8 @@
     "id": 330
 }, {
     "word": "pizza",
-    "id": 331
+    "id": 331,
+    "categories": ["Food"]
 }, {
     "word": "plate",
     "id": 332
@@ -1002,10 +1160,12 @@
     "id": 333
 }, {
     "word": "please",
-    "id": 334
+    "id": 334,
+    "categories": ["Common"]
 }, {
     "word": "pleased",
-    "id": 335
+    "id": 335,
+    "categories": ["Feelings"]
 }, {
     "word": "police officer",
     "id": 336
@@ -1038,7 +1198,8 @@
     "id": 345
 }, {
     "word": "put",
-    "id": 346
+    "id": 346,
+    "categories": ["Common"]
 }, {
     "word": "quarrel",
     "id": 347
@@ -1065,7 +1226,8 @@
     "id": 354
 }, {
     "word": "really",
-    "id": 355
+    "id": 355,
+    "categories": ["Common"]
 }, {
     "word": "red",
     "id": 356
@@ -1086,19 +1248,22 @@
     "id": 361
 }, {
     "word": "roti",
-    "id": 362
+    "id": 362,
+    "categories": ["Food"]
 }, {
     "word": "run",
     "id": 363
 }, {
     "word": "sad",
-    "id": 364
+    "id": 364,
+    "categories": ["Feelings"]
 }, {
     "word": "sailor",
     "id": 365
 }, {
     "word": "salad",
-    "id": 366
+    "id": 366,
+    "categories": ["Food"]
 }, {
     "word": "same",
     "id": 367
@@ -1107,7 +1272,8 @@
     "id": 368
 }, {
     "word": "sandwich",
-    "id": 369
+    "id": 369,
+    "categories": ["Food"]
 }, {
     "word": "saturday",
     "id": 370
@@ -1116,7 +1282,8 @@
     "id": 371
 }, {
     "word": "save",
-    "id": 372
+    "id": 372,
+    "categories": ["Common"]
 }, {
     "word": "school",
     "id": 373
@@ -1128,7 +1295,8 @@
     "id": 375
 }, {
     "word": "see",
-    "id": 376
+    "id": 376,
+    "categories": ["Common"]
 }, {
     "word": "sew",
     "id": 377
@@ -1140,7 +1308,8 @@
     "id": 379
 }, {
     "word": "shave",
-    "id": 380
+    "id": 380,
+    "categories": ["Activities"]
 }, {
     "word": "shaver",
     "id": 381
@@ -1152,19 +1321,24 @@
     "id": 383
 }, {
     "word": "shop",
-    "id": 384
+    "id": 384,
+    "categories": ["Routine"]
 }, {
     "word": "shower",
-    "id": 385
+    "id": 385,
+    "categories": ["Activities", "Routine"]
 }, {
     "word": "shower",
-    "id": 386
+    "id": 386,
+    "categories": ["Activities"]
 }, {
     "word": "sick",
-    "id": 387
+    "id": 387,
+    "categories": ["Feelings"]
 }, {
     "word": "sing",
-    "id": 388
+    "id": 388,
+    "categories": ["Activities"]
 }, {
     "word": "sister",
     "id": 389
@@ -1203,16 +1377,19 @@
     "id": 400
 }, {
     "word": "soft",
-    "id": 401
+    "id": 401,
+    "categories": ["Common"]
 }, {
     "word": "soldier",
     "id": 402
 }, {
     "word": "some",
-    "id": 403
+    "id": 403,
+    "categories": ["Common"]
 }, {
     "word": "sorry",
-    "id": 404
+    "id": 404,
+    "categories": ["Feelings"]
 }, {
     "word": "soup",
     "id": 405
@@ -1227,31 +1404,37 @@
     "id": 408
 }, {
     "word": "stamp",
-    "id": 409
+    "id": 409,
+    "categories": ["Activities"]
 }, {
     "word": "stand up",
-    "id": 410
+    "id": 410,
+    "categories": ["Activities"]
 }, {
     "word": "stars",
     "id": 411
 }, {
     "word": "start",
-    "id": 412
+    "id": 412,
+    "categories": ["Activities"]
 }, {
     "word": "stereo",
     "id": 413
 }, {
     "word": "stop",
-    "id": 414
+    "id": 414,
+    "categories": ["Activities", "Common"]
 }, {
     "word": "string",
     "id": 415
 }, {
     "word": "strong",
-    "id": 416
+    "id": 416,
+    "categories": ["Common"]
 }, {
     "word": "sugar",
-    "id": 417
+    "id": 417,
+    "categories": ["Food"]
 }, {
     "word": "sun",
     "id": 418
@@ -1266,7 +1449,8 @@
     "id": 421
 }, {
     "word": "swim",
-    "id": 422
+    "id": 422,
+    "categories": ["Activities"]
 }, {
     "word": "table",
     "id": 423
@@ -1278,10 +1462,12 @@
     "id": 425
 }, {
     "word": "tea",
-    "id": 426
+    "id": 426,
+    "categories": ["Food"]
 }, {
     "word": "teach",
-    "id": 427
+    "id": 427,
+    "categories": ["Activities"]
 }, {
     "word": "teacher",
     "id": 428
@@ -1296,37 +1482,48 @@
     "id": 431
 }, {
     "word": "thank you",
-    "id": 432
+    "id": 432,
+    "categories": ["Common"]
 }, {
     "word": "that",
-    "id": 433
+    "id": 433,
+    "categories": ["Common"]
 }, {
     "word": "the",
-    "id": 434
+    "id": 434,
+    "categories": ["Common"]
 }, {
     "word": "their",
-    "id": 435
+    "id": 435,
+    "categories": ["Common"]
 }, {
     "word": "theirs",
-    "id": 436
+    "id": 436,
+    "categories": ["Common"]
 }, {
     "word": "them",
-    "id": 437
+    "id": 437,
+    "categories": ["Common"]
 }, {
     "word": "there",
-    "id": 438
+    "id": 438,
+    "categories": ["Common"]
 }, {
     "word": "they",
-    "id": 439
+    "id": 439,
+    "categories": ["Common"]
 }, {
     "word": "think",
-    "id": 440
+    "id": 440,
+    "categories": ["Common"]
 }, {
     "word": "thirsty",
-    "id": 441
+    "id": 441,
+    "categories": ["Feelings", "Food"]
 }, {
     "word": "this",
-    "id": 442
+    "id": 442,
+    "categories": ["Common"]
 }, {
     "word": "thread",
     "id": 443
@@ -1338,16 +1535,19 @@
     "id": 445
 }, {
     "word": "time",
-    "id": 446
+    "id": 446,
+    "categories": ["Routine"]
 }, {
     "word": "tiny",
     "id": 447
 }, {
     "word": "today",
-    "id": 448
+    "id": 448,
+    "categories": ["Routine", "Common"]
 }, {
     "word": "toilet",
-    "id": 449
+    "id": 449,
+    "categories": ["Activities"]
 }, {
     "word": "tomato",
     "id": 450
@@ -1386,13 +1586,16 @@
     "id": 461
 }, {
     "word": "up",
-    "id": 462
+    "id": 462,
+    "categories": ["Common"]
 }, {
     "word": "us",
-    "id": 463
+    "id": 463,
+    "categories": ["Common"]
 }, {
     "word": "vegetables",
-    "id": 464
+    "id": 464,
+    "categories": ["Food"]
 }, {
     "word": "video camera",
     "id": 465
@@ -1410,7 +1613,8 @@
     "id": 469
 }, {
     "word": "vomit",
-    "id": 470
+    "id": 470,
+    "categories": ["Feelings"]
 }, {
     "word": "wages",
     "id": 471
@@ -1419,10 +1623,12 @@
     "id": 472
 }, {
     "word": "want",
-    "id": 473
+    "id": 473,
+    "categories": ["Common"]
 }, {
     "word": "was",
-    "id": 474
+    "id": 474,
+    "categories": ["Common"]
 }, {
     "word": "wash",
     "id": 475
@@ -1434,43 +1640,54 @@
     "id": 477
 }, {
     "word": "water",
-    "id": 478
+    "id": 478,
+    "categories": ["Food"]
 }, {
     "word": "water",
-    "id": 479
+    "id": 479,
+    "categories": ["Food"]
 }, {
     "word": "we",
-    "id": 480
+    "id": 480,
+    "categories": ["Common"]
 }, {
     "word": "were",
-    "id": 481
+    "id": 481,
+    "categories": ["Common"]
 }, {
     "word": "what",
-    "id": 482
+    "id": 482,
+    "categories": ["Common"]
 }, {
     "word": "wheelchair",
     "id": 483
 }, {
     "word": "when",
-    "id": 484
+    "id": 484,
+    "categories": ["Common"]
 }, {
     "word": "where",
-    "id": 485
+    "id": 485,
+    "categories": ["Common"]
 }, {
     "word": "which",
-    "id": 486
+    "id": 486,
+    "categories": ["Common"]
 }, {
     "word": "white",
     "id": 487
 }, {
     "word": "who",
-    "id": 488
+    "id": 488,
+    "categories": ["Common"]
 }, {
     "word": "why",
-    "id": 489
+    "id": 489,
+    "categories": ["Common"]
 }, {
     "word": "will",
-    "id": 490
+    "id": 490,
+    "categories": ["Common"]
 }, {
     "word": "win",
     "id": 491
@@ -1482,10 +1699,12 @@
     "id": 493
 }, {
     "word": "wine",
-    "id": 494
+    "id": 494,
+    "categories": ["Food"]
 }, {
     "word": "with",
-    "id": 495
+    "id": 495,
+    "categories": ["Common"]
 }, {
     "word": "woman",
     "id": 496
@@ -1497,7 +1716,8 @@
     "id": 498
 }, {
     "word": "worried",
-    "id": 499
+    "id": 499,
+    "categories": ["Feelings"]
 }, {
     "word": "write",
     "id": 500
@@ -1506,7 +1726,8 @@
     "id": 501
 }, {
     "word": "yes",
-    "id": 502
+    "id": 502,
+    "categories": ["Common"]
 }, {
     "word": "yesterday",
     "id": 503
@@ -1515,44 +1736,58 @@
     "id": 504
 }, {
     "word": "you",
-    "id": 505
+    "id": 505,
+    "categories": ["Common"]
 }, {
     "word": "your",
-    "id": 506
+    "id": 506,
+    "categories": ["Common"]
 }, {
     "word": "yours",
-    "id": 507
+    "id": 507,
+    "categories": ["Common"]
 }, {
     "word": "1",
-    "id": 508
+    "id": 508,
+    "categories": ["Common"]
 }, {
     "word": "2",
-    "id": 509
+    "id": 509,
+    "categories": ["Common"]
 }, {
     "word": "3",
-    "id": 510
+    "id": 510,
+    "categories": ["Common"]
 }, {
     "word": "4",
-    "id": 511
+    "id": 511,
+    "categories": ["Common"]
 }, {
     "word": "5",
-    "id": 512
+    "id": 512,
+    "categories": ["Common"]
 }, {
     "word": "6",
-    "id": 513
+    "id": 513,
+    "categories": ["Common"]
 }, {
     "word": "7",
-    "id": 514
+    "id": 514,
+    "categories": ["Common"]
 }, {
     "word": "8",
-    "id": 515
+    "id": 515,
+    "categories": ["Common"]
 }, {
     "word": "9",
-    "id": 516
+    "id": 516,
+    "categories": ["Common"]
 }, {
     "word": "10",
-    "id": 517
+    "id": 517,
+    "categories": ["Common"]
 }, {
     "word": "0",
-    "id": 518
+    "id": 518,
+    "categories": ["Common"]
 }]
