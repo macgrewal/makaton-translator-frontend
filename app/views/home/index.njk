@@ -1,18 +1,19 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
-  <form id="english-display" method="POST" data-language="english" data-username="{{ englishSpeaker.username }}">
+  <form method="POST" data-language="english" data-username="{{ englishSpeaker.username }}">
     <a href="#makaton-display">Back</a>
-    <div id="makaton-card-translation"></div>
+    <div id="makaton-cards-translation"></div>
     <div id="makaton-words-translation"></div>
     <label>
       <span>English</span>
       <textarea name="english"></textarea>
     </label>
-    <button>Reply</button>
+    <button id="translate-to-makaton">Reply</button>
   </form>
-  <form id="makaton-display" method="POST" data-language="makaton" data-username="{{ makatonUser.username }}">
-    <div id="makaton-image-container"></div>
+  
+  <form method="POST" data-language="makaton" data-username="{{ makatonUser.username }}">
+    <div id="makaton-cards-container"></div>
     <div id="makaton-user-translation-actions">
       <button id="remove-last-card">Undo</button>
       <button id="translate-to-english">Translate</button>
@@ -33,14 +34,27 @@
       <h2>Cards</h2>
       <span>Choose cards</span>
       <ul data-category="Meals">
-        <li>
-          <img src="/img/core/0.png" alt="Unknonw" />
-        </li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
+        <li><img src="/img/core/0.png" alt="Unknonw" /></li>
       </ul>
     </section>
   </form>
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/translate.js"></script>
+  <script src="/js/app.js"></script>
 {% endblock %}
