@@ -80,7 +80,11 @@ $(document).ready(function () {
       var cardList = $('<ul data-category="' + category.name + '"></ul>');
       for (var w = 0; w < category.words.length; w++) {
         var word = category.words[w];
-        cardList.append($('<li><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
+        cardList.append($('<li data-word-id="' + word.id + '"><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
+      }
+
+      if (c === 0) {
+        cardList.addClass('selected');
       }
 
       allMakatonCards.append(cardList);
@@ -122,7 +126,6 @@ $(document).ready(function () {
 
   loadCoreVocabulary();
   setupPage();
-
 
   // toEnglishButton.click(function () {
   //   $.ajax({
