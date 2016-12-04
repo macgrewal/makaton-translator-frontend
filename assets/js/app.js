@@ -38,6 +38,7 @@ $(document).ready(function () {
   function setupPage() {
     englishView.hide();
     makatonView.show();
+    $(makatonCardCategories[0]).addClass('selected');
   }
 
   function assignWordsToCategories() {
@@ -68,15 +69,50 @@ $(document).ready(function () {
       if (category.name === 'Meals') category.words = meals.concat(common);
       if (category.name === 'All') category.words = all;
     }
+  }
 
-    console.log(categories);
+  function buildCards() {
+    var allMakatonCards = $('#all-makaton-cards');
+
+    for (var c = 0; c < categories.length; c++) {
+      var category = categories[c];
+
+      var cardList = $('<ul data-category="' + category.name + '"></ul>');
+      for (var w = 0; w < category.words.length; w++) {
+        var word = category.words[w];
+        cardList.append($('<li><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
+      }
+
+      allMakatonCards.append(cardList);
+    }
+  }
+
+  function addVisibilityToggleToCards() {
+    makatonCardCategories.click(function () {
+      for (var i = 0; i < makatonCardCategories.length; i++) {
+        $(makatonCardCategories[i]).removeClass('selected');
+      }
+
+      $(this).addClass('selected');
+      var category = $(this).data('category');
+      var categoryLists = $('#all-makaton-cards > ul[data-category]')
+      for (var i = 0; i < categoryLists.length; i++) {
+        if($(categoryLists[i]).data('category') === $(this).data('category')) { 
+          $(categoryLists[i]).addClass('selected');
+        }
+        else {
+          $(categoryLists[i]).removeClass('selected');
+        }
+      }
+    });
   }
 
   function loadCoreVocabulary() {
     $.getJSON('/js/core-vocab.json', function (words) {
       coreVocab = words;
       assignWordsToCategories();
-
+      buildCards();
+      addVisibilityToggleToCards();
     });
   }
 
@@ -84,8 +120,8 @@ $(document).ready(function () {
   reply.click(switchViews);
   translateToEnglish.click(switchViews);
 
-  setupPage();
   loadCoreVocabulary();
+  setupPage();
 
 
   // toEnglishButton.click(function () {
