@@ -3,7 +3,7 @@ $(document).ready(function () {
     back = $('a[href="#makaton-display"]'),
     // makatonCardsTranslation = $('#'),
     // makatonWordsTranslation = $('#'),
-    // english = $('#'),
+    english = $('textarea[name="english"]'),
     reply = $('#translate-to-makaton'),
 
     makatonView = $('form[data-language="makaton"]'),
@@ -47,6 +47,30 @@ $(document).ready(function () {
         scrollTop: makatonSentence.prop("scrollHeight")
       }, 200);
     });
+
+    back.click(switchViews);
+    reply.click(switchViews);
+    removeLastCard.click(function () {
+      $('li:last', makatonSentence).remove();
+    });
+    translateToEnglish.click(function () {
+      var cards = buildMakatonSentence();
+      $.ajax({
+        url: '/api/words',
+        data: {
+          username: makatonView.data('username'),
+          cards: cards
+        },
+        dataType: 'json',
+        success: function (data) {
+          english.val(data.words);
+          switchViews()
+          var words = new SpeechSynthesisUtterance(data.words);
+          words.lang = 'en-GB';
+          window.speechSynthesis.speak(words);
+        }
+      });
+    });
   }
 
   function assignWordsToCategories() {
@@ -88,7 +112,7 @@ $(document).ready(function () {
       var cardList = $('<ul data-category="' + category.name + '"></ul>');
       for (var w = 0; w < category.words.length; w++) {
         var word = category.words[w];
-        cardList.append($('<li data-word-id="' + word.id + '"><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
+        cardList.append($('<li data-word-id="' + word.id + '" data-word="' + word.word + '"><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
       }
 
       if (c === 0) {
@@ -127,12 +151,17 @@ $(document).ready(function () {
     });
   }
 
-  back.click(switchViews);
-  reply.click(switchViews);
-  removeLastCard.click(function () {
-    $('li:last', makatonSentence).remove();
-  });
-  translateToEnglish.click(switchViews);
+  function buildMakatonSentence() {
+    var cards = $('li', makatonSentence);
+    var sentence = [];
+    for (var i = 0; i < cards.length; i++) {
+      var card = $(cards[i]);
+      sentence.push({
+        id: card.data('word-id')
+      });
+    }
+    return sentence;
+  }
 
   loadCoreVocabulary();
   setupPage();
