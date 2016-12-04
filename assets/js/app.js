@@ -7,8 +7,8 @@ $(document).ready(function () {
     reply = $('#translate-to-makaton'),
 
     makatonView = $('form[data-language="makaton"]'),
-    // makatonCardsContainer = $('#'),
-    // removeLastCard = $('#'),
+    makatonSentence = $('#makaton-sentence'),
+    removeLastCard = $('#remove-last-card'),
     translateToEnglish = $('#translate-to-english'),
     makatonCardCategories = $('li[data-category]', '#makaton-card-categories'),
 
@@ -38,7 +38,13 @@ $(document).ready(function () {
   function setupPage() {
     englishView.hide();
     makatonView.show();
+    
     $(makatonCardCategories[0]).addClass('selected');
+
+    $('#all-makaton-cards').on('click','li', function() {
+      makatonSentence.append($(this).clone());
+      makatonSentence.animate({ scrollTop: makatonSentence.prop("scrollHeight")}, 200);
+    });
   }
 
   function assignWordsToCategories() {
@@ -122,6 +128,9 @@ $(document).ready(function () {
 
   back.click(switchViews);
   reply.click(switchViews);
+  removeLastCard.click(function() {
+    $('li:last', makatonSentence).remove();
+  });
   translateToEnglish.click(switchViews);
 
   loadCoreVocabulary();
