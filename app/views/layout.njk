@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
@@ -9,11 +10,13 @@
     <script src="http://localhost:35729/livereload.js"></script>
   {% endif %}
 </head>
-<body class="container">
-  <h1>{{ title }}</h1>
+
+<body>
+  <h1 class="sr-only">{{ title }}</h1>
   {% block content %}{% endblock %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="/js/core.js"></script>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   {% block scripts %}{% endblock %}
 </body>
+
 </html>

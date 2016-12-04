@@ -1,0 +1,75 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <form method="POST" data-language="english" data-username="{{ englishSpeaker.username }}">
+  <div data-direction="response" class="cards-container">
+    <a href="#makaton-display">Back</a>
+    <ul id="makaton-cards-translation" class="row">&nbsp;
+    </ul>
+    <div id="makaton-words-translation" class="row"></div>
+  </div>
+  <div data-direction="request">
+    <label class="row">
+      <span>You message</span>
+      <textarea name="english"></textarea>
+    </label>
+    <button id="translate-to-makaton">Translate</button>
+  </div>
+  </form>
+  
+  <form method="POST" data-language="makaton" data-username="{{ makatonUser.username }}">
+    <section id="makaton-input-container" class="row cards-container">
+      <ul id="makaton-sentence" class="ten columns cards-container">&nbsp;</ul>
+      <div id="makaton-user-translation-actions" class="two columns">
+        <button id="remove-last-card">Undo</button>
+        <button id="translate-to-english">Translate</button>
+      </div>
+    </section>
+    <section id="makaton-cards-container" class="row cards-container">
+      <div id="makaton-card-categories" class="two columns">
+        <h2 class="sr-only">Card Categories</h2>
+        <span class="hint">Choose type</span>
+        <ul>
+          <li data-category="Meals">
+            <figure>
+              <img src="/img/core/0.png" alt="Meals">
+              <figcaption>Meals</figcaption>
+            </figure>
+          </li>
+          <li data-category="Activities">
+            <figure>
+              <img src="/img/core/0.png" alt="Activities">
+              <figcaption>Activities</figcaption>
+            </figure>
+          </li>
+          <li data-category="Feelings">
+            <figure>
+              <img src="/img/core/0.png" alt="Feelings">
+              <figcaption>Feelings</figcaption>
+            </figure>
+          </li>
+          <li data-category="Routine">
+            <figure>
+              <img src="/img/core/0.png" alt="Routine">
+              <figcaption>Routine</figcaption>
+            </figure>
+          </li>
+          <li data-category="All">
+            <figure>
+              <img src="/img/core/0.png" alt="All">
+              <figcaption>All</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <div id="all-makaton-cards" class="ten columns">
+        <h2 class="sr-only">Cards</h2>
+        <span class="hint">Choose cards</span>
+      </div>
+    </section>
+  </form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/app.js"></script>
+{% endblock %}

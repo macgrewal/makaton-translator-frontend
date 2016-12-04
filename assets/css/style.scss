@@ -1,63 +1,285 @@
 @import 'skeleton/normalize.scss';
 @import 'skeleton/skeleton.scss';
+$largeCardSize: 100px;
+$mediumCardSize: 75px;
+$smallCardSize: 50px;
+$bgColour: #fff;
+$cardsBgColour: #ededed;
+$categoriesBgColour: #dbdbdb;
+$borderColour: #43d1a0;
+$accessibleFonts: 'Segoe UI',
+Arial,
+sans-serif;
+.sr-only {
+  position: absolute;
+  visibility: hidden;
+  left: -9999px;
+  top: -9999px;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Ubuntu", "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $cardsBgColour;
 }
 
-a {
-  color: #00B7FF;
+body,
+input,
+select,
+textarea,
+button {
+  font-family: $accessibleFonts
 }
 
-.user-details{
-  line-height: 6rem;
-  vertical-align: middle;
-  text-align: right;
-}
-
-form {
-  &[data-language="english"] button::after {
-    content: " >>"
-  }
-  &[data-direction="makaton"] button::before {
-    content: "<< "
-  }
-  label>span {
-    display: block;
-    margin-bottom: 1em;
-  }
-  textarea,
-  button,
-  .makaton {
-    width: 100%;
-  }
-  #makaton {
-    width: 100%;
-    margin-bottom: 19px;
-  }
-  textarea[name="words"],
-  #makaton {
-    min-height: 10em;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    
-    &:hover,
-    &:active {
-      border-color: #000;
-    }
-
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 25px;
+    figure,
     img {
-      display: inline-block;
-      margin: 0.25em;
-      border: 1px solid #bbb;
-      border-radius: 4px;
-      width: 25%;
+      margin: 0;
+      padding: 0;
     }
   }
-  textarea {
-    resize: vertical;
+}
+
+#makaton-input-container {
+  background-color: $bgColour;
+}
+
+#makaton-cards-container {
+  background-color: $cardsBgColour;
+  border-top-style: solid;
+  border-top-width: 5px;
+  border-top-color: $borderColour;
+}
+
+#makaton-sentence {
+  min-height: 7em;
+  border-right-style: solid;
+  border-right-width: 5px;
+  border-right-color: $borderColour;
+}
+
+#makaton-user-translation-actions {
+  position: relative;
+  margin-left: 1.25em;
+  min-width: 90px;
+  @media (max-width: 1024px) and (orientation: landscape) {
+    min-width: 130px;
   }
-  textarea[name="cards"] {
+  &>button {
+    border: 0;
+    height: 7em;
+    margin: 0;
+    padding: 0;
+  }
+  #remove-last-card {
+    float: left;
+    background-image: url('/img/undo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    line-height: 7em;
+    text-transform: none;
+    padding-top: 3.25em;
+    width: 60%;
+    font-weight: bold;
+  }
+  #translate-to-english {
+    float: right;
+    background-image: url('/img/go-english.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-indent: -999999px;
+    width: 40%;
+  }
+}
+
+.cards-container {
+  span.hint {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  ul {
+    padding: 12.5px;
+    li {
+      display: inline-block;
+      width: $largeCardSize;
+      height: $largeCardSize;
+      padding: 12.5px;
+      vertical-align: middle;
+      img {
+        display: block;
+        max-width: $largeCardSize;
+        max-height: $largeCardSize;
+        width: auto;
+        height: auto;
+        line-height: $largeCardSize;
+      }
+    }
+  }
+  #makaton-sentence,
+  #makaton-cards-translation {
+    margin-left: 0;
+    max-height: 14em;
+    overflow-y: scroll;
+    span.hint {
+      padding: 25px;
+    }
+    li {
+      background-color: $bgColour;
+      box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
+      border: 1px solid #afafaf;
+      border-radius: 4px;
+      margin: 12.5px;
+      width: $smallCardSize;
+      height: $smallCardSize;
+      img {
+        display: block;
+        max-width: $smallCardSize;
+        max-height: $smallCardSize;
+        width: auto;
+        height: auto;
+        line-height: $smallCardSize;
+      }
+    }
+  }
+}
+
+#makaton-card-categories,
+#all-makaton-cards {
+  padding: 12.5px;
+}
+
+#all-makaton-cards {
+  ul {
     display: none;
+  }
+  ul.selected {
+    display: block;
+  }
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color: $borderColour;
+  margin-left: 0;
+  span.hint {
+    padding: 25px;
+  }
+  li {
+    background-color: $bgColour;
+    box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
+    border: 1px solid #afafaf;
+    border-radius: 4px;
+    margin: 12.5px;
+  }
+}
+
+#makaton-card-categories {
+  background-color: $categoriesBgColour;
+  ul {
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    li {
+      margin: 12.5px auto;
+      padding: 12.5px;
+      height: $smallCardSize;
+      width: $smallCardSize;
+      vertical-align: middle;
+      background-color: $bgColour;
+      box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
+      border: 1px solid #afafaf;
+      border-radius: 4px;
+      @media (max-width: 1024px) and (orientation: landscape) {
+        height: $mediumCardSize;
+        width: $mediumCardSize;
+      }
+      img {
+        display: block;
+        max-width: $smallCardSize;
+        max-height: $smallCardSize;
+        width: auto;
+        height: auto;
+        line-height: $smallCardSize;
+        @media (max-width: 1024px) and (orientation: landscape) {
+          max-width: $mediumCardSize;
+          max-height: $mediumCardSize;
+        }
+      }
+      figure figcaption {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 0.25em;
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+form[data-language="english"] {
+  padding: 0;
+  margin: 0;
+  div[data-direction] {
+    margin: 0;
+    padding: 12.5px;
+    width: 100%;
+  }
+  div[data-direction="response"] {
+    background-color: $bgColour;
+    a[href="#makaton-display"] {
+      margin: 12.5px;
+      padding: 0;
+      display: block;
+      font: 2rem;
+      font-weight: bold;
+    }
+    #makaton-cards-translation {
+      display: block;
+      width: 100%;
+      min-height: 7em;
+      margin-left: 0;
+      padding-left: 0;
+      li::nth-of-type(1) {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+    #makaton-words-translation {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $borderColour;
+    }
+  }
+  div[data-direction="request"] {
+    border-top-style: solid;
+    border-top-width: 5px;
+    border-top-color: $borderColour;
+    label.row {
+      font-weight: bold;
+      font-size: 18px;
+      span {
+        display: block;
+        margin: 12.5px;
+      }
+      textarea {
+        width: 100%;
+        border: 3px solid #000;
+        margin: 12.5px;
+        padding: 12.5px;
+      }
+    }
+    button {
+      border: none;
+      background-color: $borderColour;
+      margin: 12.5px;
+      color: #fff;
+      text-transform: none;
+      font-size: 2rem;
+      border-radius: 0;
+    }
   }
 }
