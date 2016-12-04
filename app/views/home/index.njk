@@ -2,14 +2,19 @@
 
 {% block content %}
   <form method="POST" data-language="english" data-username="{{ englishSpeaker.username }}">
+  <div data-direction="response" class="cards-container">
     <a href="#makaton-display">Back</a>
-    <div id="makaton-cards-translation"></div>
-    <div id="makaton-words-translation"></div>
-    <label>
-      <span>English</span>
+    <ul id="makaton-cards-translation" class="row">&nbsp;
+    </ul>
+    <div id="makaton-words-translation" class="row"></div>
+  </div>
+  <div data-direction="request">
+    <label class="row">
+      <span>You message</span>
       <textarea name="english"></textarea>
     </label>
-    <button id="translate-to-makaton">Reply</button>
+    <button id="translate-to-makaton">Translate</button>
+  </div>
   </form>
   
   <form method="POST" data-language="makaton" data-username="{{ makatonUser.username }}">

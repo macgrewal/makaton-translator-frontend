@@ -1,8 +1,8 @@
 $(document).ready(function () {
   var englishView = $('form[data-language="english"]'),
     back = $('a[href="#makaton-display"]'),
-    // makatonCardsTranslation = $('#'),
-    // makatonWordsTranslation = $('#'),
+    makatonCardsTranslation = $('#makaton-cards-translation'),
+    makatonWordsTranslation = $('#makaton-words-translation'),
     english = $('textarea[name="english"]'),
     reply = $('#translate-to-makaton'),
 
@@ -49,27 +49,53 @@ $(document).ready(function () {
     });
 
     back.click(switchViews);
-    reply.click(switchViews);
+
+    reply.click(function () {
+      if (english.val().trim() === '') {
+        return;
+      } else {
+        $.ajax({
+          url: '/api/cards',
+          data: {
+            username: makatonView.data('username'),
+            words: english.val()
+          },
+          dataType: 'json',
+          success: setCards
+        });
+      }
+    });
+
     removeLastCard.click(function () {
       $('li:last', makatonSentence).remove();
     });
+
     translateToEnglish.click(function () {
       var cards = buildMakatonSentence();
-      $.ajax({
-        url: '/api/words',
-        data: {
-          username: makatonView.data('username'),
-          cards: cards
-        },
-        dataType: 'json',
-        success: function (data) {
-          english.val(data.words);
-          switchViews()
-          var words = new SpeechSynthesisUtterance(data.words);
-          words.lang = 'en-GB';
-          window.speechSynthesis.speak(words);
-        }
-      });
+      if (cards.length > 0) {
+        $.ajax({
+          url: '/api/words',
+          data: {
+            username: makatonView.data('username'),
+            cards: cards
+          },
+          dataType: 'json',
+          success: function (data) {
+            makatonCardsTranslation.empty();
+            var makatonCards = $('li', makatonSentence);
+            for (var i = 0; i < makatonCards.length; i++) {
+              makatonCardsTranslation.append($(makatonCards[i]).clone());
+            }
+            makatonWordsTranslation.text(data.words);
+            switchViews()
+            var words = new SpeechSynthesisUtterance(data.words);
+            words.lang = 'en-GB';
+            window.speechSynthesis.speak(words);
+          }
+        });
+      } else {
+        switchViews();
+      }
     });
   }
 
@@ -112,7 +138,7 @@ $(document).ready(function () {
       var cardList = $('<ul data-category="' + category.name + '"></ul>');
       for (var w = 0; w < category.words.length; w++) {
         var word = category.words[w];
-        cardList.append($('<li data-word-id="' + word.id + '" data-word="' + word.word + '"><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>'));
+        cardList.append(buildCard(word));
       }
 
       if (c === 0) {
@@ -121,6 +147,11 @@ $(document).ready(function () {
 
       allMakatonCards.append(cardList);
     }
+  }
+
+  function buildCard(word) {
+    var card = $('<li data-word-id="' + word.id + '"><img src="/img/core/' + word.id + '.png" alt="' + word.word + '" /></li>');
+    return card;
   }
 
   function addVisibilityToggleToCards() {
@@ -166,62 +197,22 @@ $(document).ready(function () {
   loadCoreVocabulary();
   setupPage();
 
-  // toEnglishButton.click(function () {
-  //   $.ajax({
-  //     url: '/api/words',
-  //     data: {
-  //       username: englishUsername,
-  //       cards: cards
-  //     },
-  //     dataType: 'json',
-  //     success: function (data) {
-  //       words.val(data.words);
-  //       var utterance = new SpeechSynthesisUtterance(data.words);
-  //       utterance.lang = 'en-GB';
-  //       window.speechSynthesis.speak(utterance);
-  //     }
-  //   });
-  // });
+  function addCard(data) {
+    var card = buildCard(data);
+    makatonSentence.append(card);
+    makatonSentence.animate({
+      scrollTop: makatonSentence.prop("scrollHeight")
+    }, 200);
+  }
 
-  // toMakatonButton.click(function () {
-  //   $.ajax({
-  //     url: '/api/cards',
-  //     data: {
-  //       username: englishUsername,
-  //       words: words.val()
-  //     },
-  //     dataType: 'json',
-  //     success: setCards
-  //   });
-  // });
+  function setCards(data) {
+    makatonSentence.empty();
 
-  // add.click(function () {
-  //   addCard(currentCard.val());
-  // });
+    var cards = data.cards;
+    for (i = 0; i < cards.length; i++) {
+      addCard(cards[i]);
+    }
 
-  // remove.click(function () {
-  //   cards.pop();
-  //   $('img:last', makaton).remove();
-  // });
-
-  // function addCard(cardId) {
-  //   var image = '<img src="/img/core/' + cardId + '.png" />';
-  //   makaton.append(image);
-  //   cards.push({
-  //     id: cardId
-  //   });
-  // }
-
-  // function clearAllCards() {
-  //   cards = [];
-  //   makaton.empty();
-  // }
-
-  // function setCards(data) {
-  //   clearAllCards();
-  //   var cards = data.cards;
-  //   for (i = 0; i < cards.length; i++) {
-  //     addCard(cards[i].id);
-  //   }
-  // }
+    switchViews();
+  }
 });
