@@ -107,8 +107,8 @@ ul {
     padding: 12.5px;
     li {
       display: inline-block;
-    width: $largeCardSize;
-    height: $largeCardSize;
+      width: $largeCardSize;
+      height: $largeCardSize;
       padding: 12.5px;
       vertical-align: middle;
       img {
@@ -122,31 +122,31 @@ ul {
     }
   }
   #makaton-sentence {
-      margin-left: 0;
-      max-height: 14em;
-      overflow-y: scroll;
-      span.hint {
-        padding: 25px;
-      }
-      li {
-        background-color: $bgColour;
-        box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
-        border: 1px solid #afafaf;
-        border-radius: 4px;
-        margin: 12.5px;
-        width: $smallCardSize;
-        height: $smallCardSize;
-        img {
-          display: block;
-          max-width: $smallCardSize;
-          max-height: $smallCardSize;
-          width: auto;
-          height: auto;
-          line-height: $smallCardSize;
-        }
+    margin-left: 0;
+    max-height: 14em;
+    overflow-y: scroll;
+    span.hint {
+      padding: 25px;
+    }
+    li {
+      background-color: $bgColour;
+      box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
+      border: 1px solid #afafaf;
+      border-radius: 4px;
+      margin: 12.5px;
+      width: $smallCardSize;
+      height: $smallCardSize;
+      img {
+        display: block;
+        max-width: $smallCardSize;
+        max-height: $smallCardSize;
+        width: auto;
+        height: auto;
+        line-height: $smallCardSize;
       }
     }
   }
+}
 
 #makaton-card-categories,
 #all-makaton-cards {

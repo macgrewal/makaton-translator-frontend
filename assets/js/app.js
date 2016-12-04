@@ -38,12 +38,14 @@ $(document).ready(function () {
   function setupPage() {
     englishView.hide();
     makatonView.show();
-    
+
     $(makatonCardCategories[0]).addClass('selected');
 
-    $('#all-makaton-cards').on('click','li', function() {
+    $('#all-makaton-cards').on('click', 'li', function () {
       makatonSentence.append($(this).clone());
-      makatonSentence.animate({ scrollTop: makatonSentence.prop("scrollHeight")}, 200);
+      makatonSentence.animate({
+        scrollTop: makatonSentence.prop("scrollHeight")
+      }, 200);
     });
   }
 
@@ -107,10 +109,9 @@ $(document).ready(function () {
       var category = $(this).data('category');
       var categoryLists = $('#all-makaton-cards > ul[data-category]')
       for (var i = 0; i < categoryLists.length; i++) {
-        if($(categoryLists[i]).data('category') === $(this).data('category')) { 
+        if ($(categoryLists[i]).data('category') === $(this).data('category')) {
           $(categoryLists[i]).addClass('selected');
-        }
-        else {
+        } else {
           $(categoryLists[i]).removeClass('selected');
         }
       }
@@ -128,7 +129,7 @@ $(document).ready(function () {
 
   back.click(switchViews);
   reply.click(switchViews);
-  removeLastCard.click(function() {
+  removeLastCard.click(function () {
     $('li:last', makatonSentence).remove();
   });
   translateToEnglish.click(switchViews);
