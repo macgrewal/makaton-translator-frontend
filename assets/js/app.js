@@ -10,8 +10,19 @@ $(document).ready(function () {
     // makatonCardsContainer = $('#'),
     // removeLastCard = $('#'),
     translateToEnglish = $('#translate-to-english'),
-    // makatonCardCategories = $('#'),
+    makatonCardCategories = $('li[data-category]', '#makaton-card-categories'),
 
+    categories = [{
+      name: "Meals",
+    }, {
+      name: "Activities",
+    }, {
+      name: "Feelings",
+    }, {
+      name: "Routine",
+    }, {
+      name: "All",
+    }],
     coreVocab = [];
 
   // stop the buttons from posting back to the server
@@ -29,12 +40,52 @@ $(document).ready(function () {
     makatonView.show();
   }
 
+  function assignWordsToCategories() {
+    var routines = [],
+      meals = [],
+      activities = [],
+      feelings = [],
+      common = [],
+      all = [];
+
+    for (var i = 1; i < coreVocab.length; i++) {
+      var word = coreVocab[i];
+      all.push(word);
+      if (word.categories) {
+        if (word.categories.includes('Routine')) routines.push(word);
+        if (word.categories.includes('Activities')) activities.push(word);
+        if (word.categories.includes('Common')) common.push(word);
+        if (word.categories.includes('Feelings')) feelings.push(word);
+        if (word.categories.includes('Food')) meals.push(word);
+      }
+    }
+
+    for (var i = 0; i < categories.length; i++) {
+      var category = categories[i];
+      if (category.name === 'Routine') category.words = routines.concat(common);
+      if (category.name === 'Activities') category.words = activities.concat(common);
+      if (category.name === 'Feelings') category.words = feelings.concat(common);
+      if (category.name === 'Meals') category.words = meals.concat(common);
+      if (category.name === 'All') category.words = all;
+    }
+
+    console.log(categories);
+  }
+
+  function loadCoreVocabulary() {
+    $.getJSON('/js/core-vocab.json', function (words) {
+      coreVocab = words;
+      assignWordsToCategories();
+
+    });
+  }
+
   back.click(switchViews);
   reply.click(switchViews);
   translateToEnglish.click(switchViews);
 
   setupPage();
-
+  loadCoreVocabulary();
 
 
   // toEnglishButton.click(function () {
@@ -95,17 +146,4 @@ $(document).ready(function () {
   //     addCard(cards[i].id);
   //   }
   // }
-
-  // function loadCoreVocabulary() {
-  //   $.getJSON('/js/core-vocab.json', function (words) {
-  //     for (var i = 0; i < words.length; i++) {
-  //       var word = words[i];
-  //       var option = '<option value="' + word.id + '">' + word.word + '</option>';
-  //       currentCard.append(option);
-  //     }
-  //     coreVocab = words;
-  //   });
-  // }
-
-  // loadCoreVocabulary();
 });

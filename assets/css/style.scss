@@ -1,5 +1,8 @@
   @import 'skeleton/normalize.scss';
   @import 'skeleton/skeleton.scss';
+  $largeCardSize: 100px;
+  $mediumCardSize: 75px;
+  $smallCardSize: 50px;
   $bgColour: #fff;
   $cardsBgColour: #ededed;
   $categoriesBgColour: #dbdbdb;
@@ -104,16 +107,16 @@
       padding: 12.5px;
       li {
         display: inline-block;
-        min-height: 100px;
+        min-height: $largeCardSize;
         padding: 12.5px;
         vertical-align: middle;
         img {
           display: block;
-          max-width: 100px;
-          max-height: 100px;
+          max-width: $largeCardSize;
+          max-height: $largeCardSize;
           width: auto;
           height: auto;
-          line-height: 100px;
+          line-height: $largeCardSize;
         }
       }
     }
@@ -137,33 +140,43 @@
         margin: 12.5px;
       }
     }
-    #makaton-card-categories ul {
-      margin: 0;
-      margin-top: 25px;
-      padding: 0;
-      background-color: $bgColour;
-      box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
-      border: 1px solid #afafaf;
-      border-radius: 4px;
-      li {
-        margin: 0 auto;
-        padding: 12.5px;
-        min-height: 75px;
-        vertical-align: middle;
-        img {
-          display: block;
-          max-width: 75px;
-          max-height: 75px;
-          width: auto;
-          height: auto;
-          line-height: 75px;
-        }
-        figure figcaption {
-          font-size: 1.25rem;
-          font-weight: bold;
-          text-align: center;
-          padding-top: 0.25em;
-          padding-bottom: 0.5em;
+    #makaton-card-categories {
+      background-color: $categoriesBgColour;
+      ul {
+        margin: 0;
+        margin-top: 25px;
+        padding: 0;
+        li {
+          margin: 12.5px auto;
+          padding: 12.5px;
+          min-height:$smallCardSize;
+          vertical-align: middle;
+          background-color: $bgColour;
+          box-shadow: 0px 2px 4px 0px rgba(94, 94, 94, 0.35);
+          border: 1px solid #afafaf;
+          border-radius: 4px;
+          @media (max-width: 1024px) and (orientation: landscape) {
+            min-width: $mediumCardSize;
+          }
+          img {
+            display: block;
+            max-width:$smallCardSize;
+            max-height:$smallCardSize;
+            width: auto;
+            height: auto;
+            line-height: $mediumCardSize;
+            @media (max-width: 1024px) and (orientation: landscape) {
+              max-width: $mediumCardSize;
+              max-height: $mediumCardSize;
+            }
+          }
+          figure figcaption {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0.25em;
+            padding-bottom: 0.5em;
+          }
         }
       }
     }
